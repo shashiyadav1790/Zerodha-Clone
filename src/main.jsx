@@ -12,10 +12,12 @@ import Navbar from "./landingPage/Navbar.jsx";
 import Footer from "./landingPage/Footer.jsx";
 import NotFound from "./landingPage/Notfound.jsx";
 
-    const data = await Response.json();
-    if(data.success == true){
-       navigate("/");
-    }
+    // const data = await Response.json();
+    // if(data.success == true){
+    //    navigate("/");
+    // }
+
+
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
   <Navbar/>
