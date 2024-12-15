@@ -11,6 +11,8 @@ import "./index.css";
 import Navbar from "./landingPage/Navbar.jsx";
 import Footer from "./landingPage/Footer.jsx";
 import NotFound from "./landingPage/Notfound.jsx";
+import Login from "./landingPage/signup/Login.jsx";
+
 
     // const data = await Response.json();
     // if(data.success == true){
@@ -24,7 +26,9 @@ createRoot(document.getElementById("root")).render(
     <Routes>
   
       <Route path="/" element={<Homepage />}></Route>
+    
       <Route path="/signup" element={<Signup />}></Route>
+      <Route path="/login" element={<Login/>}></Route>
       <Route path="/about" element={<AboutPage />}></Route>
       <Route path="/pricing" element={<PricingPage/>}></Route>
 

@@ -12,7 +12,6 @@ import OpenAccount from '../OpenAccount';
  function HomePage(){
     return ( 
         <>
-       
         <Hero/>
         <Award/>
         <Stats/>

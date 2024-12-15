@@ -28,8 +28,9 @@ function Navbar() {
             <ul className="navbar-nav ms-auto">
            
             <li className="nav-item">
-            <button onClick={ () => openLinkInNewTab(' http://localhost:5173/')} className="nav-link" style={{color: "#2f4f91",fontWeight: "bold"}}> Dashboard </button>
+            <button onClick={ () => openLinkInNewTab(' http://localhost:5174/')} className="nav-link" style={{color: "#2f4f91",fontWeight: "bold"}}> Dashboard </button>
               </li>
+              
               <li className="nav-item">
                 <Link className="nav-link" aria-current="page" to="/signup">
                   Signup
