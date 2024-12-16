@@ -159,26 +159,18 @@ function Signup() {
               <button type="submit" className="btn btn-primary">
                   Signup Now
                 </button>
-
-              {/* <p>
-                By logging in, you agree to our{" "}
-                <a href="#" style={{ color: "dodgerblue" }}>
-                  Terms & Privacy
-                </a>
-                .
-              </p> */}
-
-              <div className="clearfix">
-               
-                <Link to="/login">
-                <button type="submit" className="btn btn-primary">
-                  Log In
-                </button>
-                </Link>
-               
-              </div>
+         
             </div>
           </form> 
+          <div className="clearfix">
+               
+               <Link to="/login">
+               <button type="submit" className="btn btn-primary">
+                 Log In
+               </button>
+               </Link>
+              
+             </div>
                 </div>
             </div>
         </div>
