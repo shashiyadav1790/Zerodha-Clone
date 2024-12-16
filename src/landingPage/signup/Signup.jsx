@@ -1,11 +1,13 @@
 
 import { useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from 'react-router-dom'; 
+import { Link} from 'react-router-dom'; 
+import "./login.css";
 
 function Signup() {
     const [username, setusername] = useState("");
     const [password, setpassword] = useState("");
+    const [error,setErrorMessage] = useState("");
     const [email, setemail] = useState("");
 
     const openLinkInNewTab = ( url ) => {
@@ -13,7 +15,7 @@ function Signup() {
         if ( newTab ) newTab.opener = null;
       }  
 
-    const navigate = useNavigate(); 
+    // const navigate = useNavigate(); 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -24,20 +26,30 @@ function Signup() {
                 username: username,
                 password: password,
                 email: email,
+               
             });
+            console.log(username);
 
          
             if (response.status === 200) {
+               
                 console.log("Signup successful!");
                 // setTimeout(()=>{
                 //     window.location.href("http://localhost:5174");
                 // },1000)
-                openLinkInNewTab(' zerodha-dashboard-alpha.vercel.app')
+                // openLinkInNewTab(' zerodha-dashboard-alpha.vercel.app')
+                openLinkInNewTab("zerodha-dashboard-alpha.vercel.app")
             } else {
                 console.log("Signup failed!");
             }
-        } catch (err) {
-            console.error("Error during signup:", err);
+        } catch (error) {
+                      // Extract and set a meaningful error message
+    if (error.response && error.response.data && error.response.data.message) {
+        setErrorMessage(error.response.data.message); // Server-provided error
+      } else {
+        setErrorMessage("Signup failed. Please try again."); // Fallback for other errors
+      }
+            
         }
         
     };
@@ -93,50 +105,80 @@ function Signup() {
                 <div className="col-8 mt-5">
                     <img src="/assets/landing.46a77378 (1).png" alt="Landing" />
                 </div>
-                <div className="col-4 mt-5">
-                    <form className="mt-4 needs-validation" onSubmit={handleSubmit} noValidate>
-                        <h2>Signup Now</h2>
-                        <span className="mt-5">Or track your existing application.</span>
-                        <div className="mb-5">
-                            <label htmlFor="username" className="form-label mt-3">Enter your username</label>
-                            <input 
-                                type="text" 
-                                name="username" 
-                                className="form-control" 
-                                onChange={(e)=> setusername(e.target.value)}
-                                value={username} 
-                                style={{ width: "70%" }} 
-                            />
-                            <label htmlFor="email" className="form-label mt-3">Enter your email</label>
-                            <input 
-                                type="email" 
-                                name="email" 
-                                className="form-control" 
-                                onChange={(e)=> setemail(e.target.value)} 
-                                value={email} 
-                                style={{ width: "70%" }} 
-                            />
-                            <label htmlFor="password" className="form-label mt-3">Set your password</label>
-                            <input 
-                                type="password" 
-                                name="password" 
-                                className="form-control" 
-                                onChange={(e)=> setpassword(e.target.value)}
-                                value={password} 
-                                style={{ width: "70%" }} 
-                            />
-                            <p id="emailHelp" className="form-text">We'll never share your email with anyone else.</p>
-                            <button 
-                                type="submit" 
-                                className="btn btn-primary" >
-                                Continue
-                            </button>
-                            <p className="mt-3 mb-5">
-                                Already have an account?{' '}
-                                <Link to="/login">Login here</Link>
-                            </p>
-                        </div>
-                    </form>
+             
+                 
+        <div className="col-4">
+          <form onSubmit={handleSubmit} style={{ border: "1px solid #ccc" }}>
+            <div className="container">
+              <h4 style={{fontWeight: "bold"}} className="mt-3">Signup Now</h4>
+              <p>Please fill in this form to Signup.</p>
+              <hr />
+
+              <label htmlFor="email">
+                <b>Username</b>
+              </label>
+              <input
+                type="text"
+                placeholder="Enter Username"
+                value={username}
+                onChange={(e) => setusername(e.target.value)}
+                className="form-control"
+                required
+              />
+
+           <label htmlFor="email">
+                <b>Email</b>
+              </label>
+              <input
+                type="email"
+                
+                placeholder="Enter Email"
+                value={email}
+                onChange={(e) => setemail(e.target.value)}
+                className="form-control"
+                required
+              />
+
+              <label htmlFor="password" className="mt-3">
+                <b>Password</b>
+              </label>
+              <input
+                type="password"
+                placeholder="Enter Password"
+                value={password}
+                onChange={(e) => setpassword(e.target.value)}
+                className="form-control "
+                required
+              />
+
+              {error && <p className="text-danger mt-2">{error}</p>}
+
+              <label>
+                <input type="checkbox" className="mt-2" /> Remember me
+              </label>
+              <button type="submit" className="btn btn-primary">
+                  Signup Now
+                </button>
+
+              {/* <p>
+                By logging in, you agree to our{" "}
+                <a href="#" style={{ color: "dodgerblue" }}>
+                  Terms & Privacy
+                </a>
+                .
+              </p> */}
+
+              <div className="clearfix">
+               
+                <Link to="/login">
+                <button type="submit" className="btn btn-primary">
+                  Log In
+                </button>
+                </Link>
+               
+              </div>
+            </div>
+          </form> 
                 </div>
             </div>
         </div>

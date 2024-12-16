@@ -56,7 +56,9 @@
 
 import { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import "./login.css";
+
+
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -77,56 +79,83 @@ function Login() {
       });
 
       if (response.status === 200) {
-        openLinkInNewTab('zerodha-dashboard-alpha.vercel.app/')
+        openLinkInNewTab("zerodha-dashboard-alpha.vercel.app")
       }
     } catch (error) {
-      console.error("Login failed:", error);
-      setErrorMessage("Invalid username or password.");
+          // Extract and set a meaningful error message
+    if (error.response && error.response.data && error.response.data.message) {
+      setErrorMessage(error.response.data.message); // Server-provided error
+    } else {
+      setErrorMessage("Login failed. Please try again."); // Fallback for other errors
+    }
     }
   };
 
   return (
     <div className="container mt-5">
-        <div className="row">
-            <div className="col-8">
-            <img src="/assets/landing.46a77378 (1).png" ></img>
-            </div>
-            <div className="col-4">
-                        <h2 className="mt-5">Login</h2>
-                <form onSubmit={handleSubmit} className="mt-4">
-                    <div className="mb-3">
-                    <label htmlFor="username" className="form-label">Username</label>
-                    <input
-                        type="text"
-                        className="form-control"
-                        id="username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                    />
-                    </div>
-                    <div className="mb-3">
-                    <label htmlFor="password" className="form-label">Password</label>
-                    <input
-                        type="password"
-                        className="form-control"
-                        id="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                    </div>
-                    {errorMessage && <p className="text-danger">{errorMessage}</p>}
-                    <button type="submit" className="btn btn-primary">
-                    Login
-                    </button>
-                </form>
-            </div>
+      <div className="row">
+        <div className="col-8 mt-5">
+          <img src="/assets/landing.46a77378 (1).png" alt="Landing" />
         </div>
-     
+        <div className="col-4 mt-5 ">
+          <form onSubmit={handleSubmit} style={{ border: "1px solid #ccc" }}>
+            <div className="container bg-white" >
+              <h4 style={{fontWeight: "bold"}}>Login</h4>
+              <p>Please fill in this form to log in.</p>
+              <hr />
+
+              <label htmlFor="email">
+                <b>username</b>
+              </label>
+              <input
+                type="text"
+                placeholder="Enter Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="form-control"
+                required
+              />
+
+              <label htmlFor="password">
+                <b>Password</b>
+              </label>
+              <input
+                type="password"
+                placeholder="Enter Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="form-control"
+                required
+              />
+
+              {errorMessage && <p className="text-danger mt-2">{errorMessage}</p>}
+
+              <label>
+                <input type="checkbox" className="me-2" /> Remember me
+              </label>
+
+              {/* <p>
+                By logging in, you agree to our{" "}
+                <a href="#" style={{ color: "dodgerblue" }}>
+                  Terms & Privacy
+                </a>
+                .
+              </p> */}
+
+              <div className="clearfix">
+                <button type="button" className="btn btn-secondary me-2">
+                  Cancel
+                </button>
+                <button type="submit" className="btn btn-primary">
+                  Log In
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default Login;
-

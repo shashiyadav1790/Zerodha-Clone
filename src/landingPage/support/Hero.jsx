@@ -1,7 +1,7 @@
 function Hero() {
     return (
          <div className="container-fluid support">
-          <div className="row p-5">
+          <div className="row p-5 mt-5">
               <div className="col-6 p-5" style={{color: 'white',}} >
                 <h3 href="#" className="mb-5 " style={{color: 'white',textDecoration: "none"}}>Support portal</h3>
                 <p className="fs-4">Search for an answer or browse help topics to create a ticket</p>

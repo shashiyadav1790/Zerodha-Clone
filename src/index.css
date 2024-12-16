@@ -16,3 +16,14 @@
     padding: "5rem";
     color: 'white';
 }
+.menu {
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(70, 70, 70);
+
+  }
+  
+  .menu.selected {
+    color: rgb(245, 104, 52);
+  }
+  
