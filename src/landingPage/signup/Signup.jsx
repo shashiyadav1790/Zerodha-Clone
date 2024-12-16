@@ -159,18 +159,16 @@ function Signup() {
               <button type="submit" className="btn btn-primary">
                   Signup Now
                 </button>
-         
-            </div>
-          </form> 
-          <div className="clearfix">
-               
+                <div className="clearfix">
                <Link to="/login">
                <button type="submit" className="btn btn-primary">
                  Log In
                </button>
                </Link>
-              
              </div>
+            </div>
+          </form> 
+      
                 </div>
             </div>
         </div>
