@@ -2,10 +2,10 @@
 import {Link } from "react-router-dom";
 
 function Navbar() {
-  const openLinkInNewTab = ( url ) => {
-    const newTab = window.open(url, '_blank', 'noopener,noreferrer');
-    if ( newTab ) newTab.opener = null;
-  }  
+  // const openLinkInNewTab = ( url ) => {
+  //   const newTab = window.open(url, '_blank', 'noopener,noreferrer');
+  //   if ( newTab ) newTab.opener = null;
+ // }  
   return (
      
       <nav className="navbar navbar-expand-lg bg-body-tertiary border-bottom fixed-top ">
@@ -27,9 +27,9 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
            
-            <li className="nav-item">
+            {/* <li className="nav-item">
             <button onClick={ () => openLinkInNewTab(' http://localhost:5174/')} className="nav-link" style={{color: "#2f4f91",fontWeight: "bold"}}> Dashboard </button>
-              </li>
+              </li> */}
               
               <li className="nav-item">
                 <Link className="nav-link" aria-current="page" to="/signup">

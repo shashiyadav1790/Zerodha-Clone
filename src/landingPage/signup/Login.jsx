@@ -63,19 +63,21 @@ function Login() {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const navigate = useNavigate();
+  const openLinkInNewTab = ( url ) => {
+    const newTab = window.open(url, '_blank', 'noopener,noreferrer');
+    if ( newTab ) newTab.opener = null;
+  }  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8080/login", {
+      const response = await axios.post("https://zerodhabackend-r6a5.onrender.com/login", {
         username,
         password,
       });
 
       if (response.status === 200) {
-        console.log("Login successful!");
-        navigate("/"); // Redirect to the Home Page
+        openLinkInNewTab('zerodha-dashboard-alpha.vercel.app/')
       }
     } catch (error) {
       console.error("Login failed:", error);
