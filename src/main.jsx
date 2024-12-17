@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./landingPage/home/Homepage.jsx";
 import Signup from "./landingPage/signup/Signup.jsx";
+import Login from "./landingPage/login/Login.jsx";
 import AboutPage from "./landingPage/about/AboutPage.jsx";
 import PricingPage from "./landingPage/pricing/PricingPage.jsx";
 import SupportPage from "./landingPage/support/Supportpage.jsx";
@@ -11,7 +12,7 @@ import "./index.css";
 import Navbar from "./landingPage/Navbar.jsx";
 import Footer from "./landingPage/Footer.jsx";
 import NotFound from "./landingPage/Notfound.jsx";
-import Login from "./landingPage/login/login.jsx";
+
 
 
 
