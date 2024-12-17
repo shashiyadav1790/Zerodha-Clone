@@ -22,13 +22,24 @@ function Signup() {
 
         try {
          
-            const response = await axios.post("https://zerodhabackend-r6a5.onrender.com/signup", {
+            // const response = await axios.post("https://zerodhabackend-r6a5.onrender.com/signup", {
+            //     username: username,
+            //     password: password,
+            //     email: email,
+               
+            // });
+            // console.log(username);
+
+           const response = await axios.post('https://zerodhabackend-r6a5.onrender.com/signup', { 
+                 
                 username: username,
                 password: password,
-                email: email,
-               
-            });
-            console.log(username);
+               email: email,
+            }, { 
+                withCredentials: true 
+            })
+            .then(response => console.log(response))
+            .catch(error => console.error(error));
 
          
             if (response.status === 200) {
