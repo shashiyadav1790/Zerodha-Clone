@@ -11,7 +11,7 @@ import "./index.css";
 import Navbar from "./landingPage/Navbar.jsx";
 import Footer from "./landingPage/Footer.jsx";
 import NotFound from "./landingPage/Notfound.jsx";
-import Login from "./landingPage/login/Login.jsx";
+import Login from "./landingPage/loginPage/Logins.jsx";
 import SignUp from "./landingPage/signup/Signup.jsx";
 
 
