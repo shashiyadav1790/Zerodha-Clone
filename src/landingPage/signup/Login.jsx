@@ -79,6 +79,7 @@ function Login() {
       });
 
       if (response.status === 200) {
+        
         openLinkInNewTab("zerodha-dashboard-alpha.vercel.app")
       }
     } catch (error) {

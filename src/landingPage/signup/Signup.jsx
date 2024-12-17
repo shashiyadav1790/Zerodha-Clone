@@ -30,7 +30,7 @@ function Signup() {
             // });
             // console.log(username);
 
-           const response = await axios.post('https://zerodhabackend-r6a5.onrender.com/signup', { 
+           const response = await axios.post("https://zerodhabackend-r6a5.onrender.com/signup", { 
                  
                 username: username,
                 password: password,
@@ -49,9 +49,9 @@ function Signup() {
                 //     window.location.href("http://localhost:5174");
                 // },1000)
                 // openLinkInNewTab(' zerodha-dashboard-alpha.vercel.app')
-                openLinkInNewTab("zerodha-dashboard-alpha.vercel.app")
+                openLinkInNewTab("https://zerodha-dashboard-alpha.vercel.app")
             } else {
-                console.log("Signup failed!");
+                console.log("failed");
             }
         } catch (error) {
                       // Extract and set a meaningful error message
