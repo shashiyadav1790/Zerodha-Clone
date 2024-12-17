@@ -3,7 +3,7 @@ import { Link} from "react-router-dom";
 import axios from "axios";
 // import { ToastContainer, toast } from "react-toastify";
 // import "../style.css"
-const Login = () => {
+const Logins  = () => {
   // const navigate = useNavigate();
   const [successMessage, setSuccessMessage] = useState("");
   const [inputValue, setInputValue] = useState({
@@ -32,7 +32,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://zerodha-pq9f.onrender.com/login",
+        "https://zerodhabackend-r6a5.onrender.com",
         {
           ...inputValue,
         },
@@ -101,4 +101,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Logins;
