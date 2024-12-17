@@ -11,7 +11,8 @@ import "./index.css";
 import Navbar from "./landingPage/Navbar.jsx";
 import Footer from "./landingPage/Footer.jsx";
 import NotFound from "./landingPage/Notfound.jsx";
-import Login from "./landingPage/signup/Login.jsx";
+import Login from "./landingPage/login/login.jsx";
+
 
 
     // const data = await Response.json();
