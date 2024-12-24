@@ -43,7 +43,7 @@ const Logins  = () => {
       if (success) {
         setSuccessMessage(message);
         setTimeout(() => {
-          window.location.href = "https://zerodha-dashboard-alpha.vercel.app";
+          window.location.href = "https://zerodha-dashboard-blush.vercel.app/";
           console.log(data);
         }, 1000);
       } else {

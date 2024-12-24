@@ -32,7 +32,7 @@ function SignUp() {
       const { success, message } = data;
       if (success) {
         setTimeout(() => {
-          window.location.href = "https://zerodha-dashboard-alpha.vercel.app"
+          window.location.href = "https://zerodha-dashboard-blush.vercel.app/"
         }, 1000);
       } else {
        alert(message)
